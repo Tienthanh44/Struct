@@ -32,21 +32,25 @@ void addStaff()
 void findStaff()
 {
     cout<<"Nhap id can tim :";
-    int x;
+    int x=0;
     cin>>x;
-    for (int i=0;i<addnew;i++){
-        if(st[i].id=x){
+    for (int i=0; i<addnew; i++)
+    {
+        if(x==st[i].id)
+        {
             cout<<"\nNhan vien can tim la :"<<st[i].name;
         }
-        else{
+        else
+        {
             cout<<"id khong phu hop ";
         }
     }
 }
 void listStaff()
 {
-    cout<<"Danh sach nhan vien la :";
-    for(int i=0;i<addnew;i++){
+    cout<<"\nDanh sach nhan vien la :";
+    for(int i=0; i<addnew; i++)
+    {
         cout<<"\n"<<i+1<<" "<<st[i].name<<" "<<st[i].id<<" "<<st[i].age<<" "<<st[i].mainsalary<<" "<<st[i].extrasalary<<" "<<st[i].othersalary;
 
     }
@@ -54,9 +58,12 @@ void listStaff()
 void arrangeStaff()
 {
     Staff temp[1];
-    for (int i=0;i<addnew-1;i++){
-        for (int j=i+1;j<addnew;j++){
-            if(st[i].age>=st[j].age){
+    for (int i=0; i<addnew-1; i++)
+    {
+        for (int j=i+1; j<addnew; j++)
+        {
+            if(st[i].age>=st[j].age)
+            {
                 temp[0]=st[i];
                 st[i]=st[j];
                 st[j]=temp[0];
@@ -64,19 +71,30 @@ void arrangeStaff()
         }
     }
     cout<<"Sap xep theo tuoi cua nhan vien :";
-    for (int i=0;i<addnew;i++){
+    for (int i=0; i<addnew; i++)
+    {
         cout<<" "<<st[i].age;
     }
+    listStaff();
+
+
 
 }
 void mediumStaff()
 {
     int tong=0;
-    for (int i=0;i<addnew;i++){
-    tong=0;
-    tong=tong+st[i].mainsalary+st[i].extrasalary+st[i].othersalary;
-    st[i].mediumsalary=(tong/3);
-    cout<<"\nLuong trung binh cua nhan vien "<<st[i].name<<" : "<<st[i].mediumsalary;
+    for (int i=0; i<addnew; i++)
+    {
+        tong=0;
+        tong=tong+st[i].mainsalary+st[i].extrasalary+st[i].othersalary;
+        st[i].mediumsalary=(tong/3);
+        cout<<"\nLuong trung binh cua nhan vien "<<st[i].name<<" : "<<st[i].mediumsalary;
+    }
+    cout<<"\nDanh sach nhan vien la :";
+    for(int i=0; i<addnew; i++)
+    {
+        cout<<"\n"<<i+1<<" "<<st[i].name<<" "<<st[i].id<<" "<<st[i].age<<" "<<st[i].mainsalary<<" "<<st[i].extrasalary<<" "<<st[i].othersalary<<" "<<st[i].mediumsalary;
+
     }
 }
 int main()
